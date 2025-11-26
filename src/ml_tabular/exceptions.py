@@ -153,6 +153,18 @@ class ModelError(AppError):
     default_code = "model_error"
 
 
+class TrainingError(ModelError):
+    """Errors raised during model training loops.
+
+    Use this for:
+    - invalid training arguments / hyperparameters,
+    - failures inside training/eval loops,
+    - unexpected NaNs/inf in loss, etc.
+    """
+
+    default_code = "training_error"
+
+
 class PipelineError(AppError):
     """High-level orchestration / pipeline wiring errors."""
 
